@@ -18,6 +18,11 @@ app.get('/', (req, res) => {
     res.send('✅ API LVLUP opérationnelle !');
 });
 
+// Route ping 
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
+
 // Connexion MongoDB
 mongoose
     .connect(process.env.MONGO_URI)
